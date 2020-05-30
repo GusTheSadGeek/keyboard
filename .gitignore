@@ -1,0 +1,6 @@
+*.stl
+*.off
+*.amf
+.idea
+*.obj
+
