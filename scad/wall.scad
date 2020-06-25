@@ -2,21 +2,38 @@
 T=4;
 tt=T/2;
 
-module C1() translate([115.5,61,-106]) cylinder(100,tt,tt);
+
+module C1() {
+  if (right_key_cols==6)  translate([116.2,61,-106]) cylinder(100,tt,tt);
+  if (right_key_cols==7)  translate([131.2,67,-106]) cylinder(100,tt,tt);
+}
+
+
 module C2() translate([8,22,-77]) cylinder(100,tt,tt);
 
 //module C3() translate([0,18,-78]) cylinder(100,tt,tt);
 module C3() translate([0,22,-77]) cylinder(100,tt,tt);
 
 module C4() translate([-8,22,-77]) cylinder(100,tt,tt);
-module C5() translate([-115.5,61,-106]) cylinder(100,tt,tt);
 
-module C6() translate([-157.5,-51,-100]) cylinder(100,tt,tt);
+module C5() {
+    if (right_key_cols==6)  translate([-116.2,61,-106]) cylinder(100,tt,tt);
+    if (right_key_cols==7)  translate([-131.2,67,-106]) cylinder(100,tt,tt);
+}
+
+module C6() {
+    if (right_key_cols==6)  translate([-157.5,-51,-100]) cylinder(100,tt,tt);
+    if (right_key_cols==7)  translate([-173,-46,-100]) cylinder(100,tt,tt);
+}
+
 module C7() translate([-66,-85,-79]) cylinder(100,tt,tt);
 
-
 module C8() translate([66,-85,-79]) cylinder(100,tt,tt);
-module C9() translate([157.5,-51,-100]) cylinder(100,tt,tt);
+
+module C9() {
+    if (right_key_cols==6)  translate([157.5,-51,-100]) cylinder(100,tt,tt);
+    if (right_key_cols==7)  translate([173,-46,-100]) cylinder(100,tt,tt);
+}
 
 module fudge(){
     hull(){

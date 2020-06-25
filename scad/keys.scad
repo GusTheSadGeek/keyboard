@@ -86,8 +86,8 @@ module key_stamp(q=0.96,w=1,h=1){
 
 module key_blank(w=1,h=1){
     z=6;
-    x=key_spacing_x+1;
-    y=key_spacing_y+1;
+    x=key_spacing_x+1.5;
+    y=key_spacing_y+1.5;
 
     if (h == 2) {
         translate([0, -key_spacing_y/2, -1]) cube([x,y,z], center=true);

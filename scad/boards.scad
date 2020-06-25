@@ -40,19 +40,20 @@ module centre(padding=0){
 
     union(){
         k=$kk;
-        if (padding==1){
+        if (padding==1){ //not a key
             translate([0,0,radius]){
-                rotate([0,0,0]) rotate([16.5,0,0]) translate([0,0,-radius]) key($kk=k);
+                rotate([0,0,0]) rotate([16.9,0,0]) translate([0,0,-radius]) key($kk=k);
             }
         }
+
         translate([0,0,radius]){
-            rotate([0,0,0]) rotate([11.0,0,0]) translate([0,0,-radius]) key($kk=k);
+            rotate([0,0,0]) rotate([11.4,0,0]) translate([0,0,-radius]) key($kk=k);
         }
         translate([-9.525,0,radius]){
-            rotate([0,0,0]) rotate([5.5,0,0]) translate([0,0,-radius]) key($kk=k);
+            rotate([0,0,0]) rotate([5.7,0,0]) translate([0,0,-radius]) key($kk=k);
         }
         translate([9.525,0,radius]){
-            rotate([0,0,0]) rotate([5.5,0,0]) translate([0,0,-radius]) key($kk=k);
+            rotate([0,0,0]) rotate([5.7,0,0]) translate([0,0,-radius]) key($kk=k);
         }
         translate([-19.05,0,radius]){
             rotate([0,0,0]) rotate([0.0,0,0]) translate([0,0,-radius]) key($kk=k);
@@ -91,6 +92,8 @@ module strip_r(ry=4, a=1,b=1,c=1,d=1,e=1,f=1){
 }
 
 module keyboard_right(){
+    n=12.55;
+
     union(){
         translate([0,0,0])      strip_r(ry=4,a=0);
         translate([12.55,0,-2]) strip_r(ry=2);
@@ -98,6 +101,11 @@ module keyboard_right(){
         translate([34.15,0,-3]) strip_r(ry=-3);
         translate([43.2,0,-2])  strip_r(ry=-6);
         translate([55.75,0,0])  strip_r(ry=-8);
+//        translate([62.2,0,1])   strip_r(ry=-12);
+//        translate([65.1,0,2])   strip_r(ry=-17);
+
+
+      if (right_key_cols>6)  translate([92.7,0,3])  strip_r(ry=-9);
     }
 }
 
@@ -109,5 +117,6 @@ module keyboard_left(){
         translate([-34.15,0,-3]) strip_r(ry=3);
         translate([-43.2,0,-2])  strip_r(ry=6);
         translate([-55.75,0,0])  strip_r(ry=8);
+        if (left_key_cols>6)  translate([-68.2,0,3])  strip_r(ry=9);
     }
 }

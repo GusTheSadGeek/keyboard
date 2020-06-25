@@ -2,7 +2,8 @@ key_spacing_x=19.05;
 key_spacing_y=19.05;
 print_base=false;
 print_top=true;
-
+left_key_cols=6;
+right_key_cols=6;
 
 
 
@@ -10,12 +11,11 @@ include <keys.scad>;
 include <wall.scad>;
 include <boards.scad>;
 
+module dummy(){}
 
 s=94;
 r=20;
 a=15;
-
-
 
 module keyboard() {
 // keyboards
